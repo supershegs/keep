@@ -1,0 +1,59 @@
+{% extends 'header.html'%}
+
+{% load static %}
+
+{% block content %}
+<div id="form">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+    <form method="POST">
+        {% csrf_token %}
+    <h4 class="text-center">Doctor Register page</h4>
+        
+        {% for message in messages %}
+            <h5>{{message}}</h5>
+        {% endfor %}
+        
+        <label for="fname">First Name</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Your first name..">
+        
+    
+        <label for="lname">Last Name</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Your last name..">
+        
+    
+        <label for="Uname">Username</label>
+        <input type="text" name="username" id="username" placeholder="Username">
+        
+
+        <label for="Pname"> Password </label>
+        <input type="text" name="password" id="password" placeholder="password">
+        
+        
+        <label for="units"> Select your department </label>
+        <select name="units" id="units">
+            {% for choice in doctor_form.units.field.choices %}
+                {% if choice.0 %}   
+                    <option value="{{ choice.1 }}" selected='{{ choice.1 }}' class= form-select> 
+                        {{ choice.1 }}
+                    </option>
+                {% endif %}
+            {% endfor %}
+
+        </select>
+
+        
+        <label for="address"> Address </label>
+        <input type="text" name="address" id="address" placeholder="address">
+        
+        <label for="phone_number"> Phone Number </label>
+        <input type="text" name="mobile" id="mobile" placeholder="mobile" >
+        
+        <label for="profile_pics">Choose/upload your image:</label>
+        <input type="file" id="profile_pics" name="profile_pics"  accept="profilePics/Doctor_pics/" >
+        
+        <input type="submit" value="Submit"class="btnSubmit">   
+        <div class="text-center">Already have an account? <a href="adminlogin">CLick Login here</a></div>
+    </form>
+</div>
+ 
+  {% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'header.html'%}
+{% load widget_tweaks %}
+
+
+{% load static %}
+
+{% block content %}
+<div id="form">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+    <form method="POST">
+        {% csrf_token %}
+        {% for message in messages %}
+        <h5>{{message}}</h5>
+        {% endfor %}
+        <h4 class="text-center">Admin Login page</h4>
+        <label for="Uname">Username</label>
+        {% render_field form.username class="form-control" placeholder="Username" %}
+
+        <label for="Pname"> Password </label>
+        {% render_field form.password class="form-control" placeholder="Password" %}
+            
+        <input type="submit" value="Submit"class="btnSubmit">
+    </form>
+  </div>
+ 
+  {% endblock content %}

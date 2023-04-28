@@ -1,0 +1,26 @@
+{% extends 'header.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+
+{% load static %}
+<style>
+    body div.container#main {
+        min-height: 500px;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'css/glow.css' %}">
+
+<div class="container" id="main" >
+    <h2 class="text-center">Doctor page</h2>
+    <br><br>
+    <h4 class="text-center">Choose Your Hospital Like Your Life Depends on It</h4>
+    <p class="text-center">
+        <a class="btn btn-primary btn-lg" href="doctor_signup.html" role="button" id="buttonAppointment">Register</a>
+        <a class="btn btn-primary btn-lg" href="/doctor_login" role="button" id="buttonAppointment">Login</a>
+    </p>
+</div>
+{% endblock content %}

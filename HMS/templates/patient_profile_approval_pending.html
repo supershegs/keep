@@ -1,0 +1,25 @@
+{% extends 'header.html'%}
+
+
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    body div.container#main {
+        min-height: 500px;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'css/glow.css' %}">
+
+<div class="container" id="main" >
+    <h2 class="text-center">Patient Awaiting profile Activation</h2>
+    <br><br>
+    <h4 class="text-center" id="glow">Choose Your Hospital Like Your Life Depends on It</h4>
+
+    <h4 class="text-center" id="glow">Please wait while we process your approval before your profile is fully active</h4>
+    
+</div>
+
+{% endblock content %}
